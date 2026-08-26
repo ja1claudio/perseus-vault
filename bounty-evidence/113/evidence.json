@@ -7,6 +7,7 @@
     "pinned_source_commit": "f48e528f89dfb8ce8c19c4a0714808a9d1fb728c"
   },
   "generation": {
+    "runx_cli_version": "runx-cli 0.8.2",
     "adapter": "MCP stdio source adapter via mcp-parser 0.4.1",
     "sourcey_version": "3.6.5",
     "feature_profile": "--no-default-features",
@@ -24,7 +25,8 @@
     "All upstream CI checks passed on the adoption PR, including Linux, macOS, Windows, Clippy, CodeQL, security audit and the Sourcey build.",
     "metadata.json records Perseus Vault 2.23.1, Sourcey 3.6.5, mcp-parser 0.4.1, the lean feature profile, 173 tools and the canonical raw digest.",
     "The canonical raw snapshot remains unmodified; the renderer derivative preserves the same ordered set of 173 unique tool names.",
-    "A runx 0.8.2 governed audit checked the live page, snapshots, digest, metadata, five rendered tools and merged PR provenance."
+    "The exact audit runtime version was runx-cli 0.8.2.",
+    "A governed runx audit checked the live page, snapshots, digest, metadata, five rendered tools and merged PR provenance."
   ],
   "known_gaps": []
 }
