@@ -1,0 +1,29 @@
+skill: perseus-sourcey-adoption-audit
+version: "1.0.0"
+
+runners:
+  default:
+    default: true
+    type: cli-tool
+    command: node
+    args:
+      - verify.mjs
+    artifacts:
+      named_emits:
+        audit: audit
+    inputs:
+      public_url:
+        type: string
+        required: true
+      upstream_pr:
+        type: string
+        required: true
+      expected_source_commit:
+        type: string
+        required: true
+      expected_raw_sha256:
+        type: string
+        required: true
+      expected_tool_count:
+        type: integer
+        required: true
