@@ -1,0 +1,38 @@
+{
+  "summary": "A practical field guide to reliable MCP documentation based on a real 173-tool adoption.",
+  "profile_url": "REPLACE_WITH_ELIGIBLE_PUBLIC_PROFILE_URL",
+  "account_creation_date": "REPLACE_AFTER_PROFILE_VERIFICATION",
+  "prior_post_count": 0,
+  "topic": 8,
+  "checked_at": "2026-08-28T12:00:00Z",
+  "observations": [
+    {
+      "fact": "Sourcey renders MCP tools, resources, and prompts as browsable reference.",
+      "sourcey_url": "https://sourcey.com/oss",
+      "offer_id": "sourcey-oss-mcp-reference",
+      "quoted_value": "Tools, resources, and prompts rendered as browsable reference.",
+      "checked_at": "2026-08-28T12:00:00Z"
+    },
+    {
+      "fact": "Sourcey publishes JSON-RPC, TypeScript, and Python MCP code samples.",
+      "sourcey_url": "https://github.com/sourcey/sourcey",
+      "offer_id": "sourcey-mcp-code-samples",
+      "quoted_value": "JSON-RPC, TypeScript, and Python code samples",
+      "checked_at": "2026-08-28T12:00:00Z"
+    },
+    {
+      "fact": "One Sourcey build can emit structured HTML, a JSON index, and llms.txt.",
+      "sourcey_url": "https://sourcey.com/oss",
+      "offer_id": "sourcey-agent-context-exports",
+      "quoted_value": "Clean structured HTML, a JSON search index, and llms.txt from one build.",
+      "checked_at": "2026-08-28T12:00:00Z"
+    },
+    {
+      "fact": "Sourcey builds static HTML that can be deployed anywhere.",
+      "sourcey_url": "https://sourcey.com/oss",
+      "offer_id": "sourcey-static-output",
+      "quoted_value": "Builds to static HTML. Deploy anywhere.",
+      "checked_at": "2026-08-28T12:00:00Z"
+    }
+  ]
+}
