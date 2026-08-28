@@ -4,7 +4,7 @@
     "public_url": "https://perseus.observer/vault/mcp-reference/",
     "upstream_pr": "https://github.com/Perseus-Computing-LLC/perseus-vault/pull/1160",
     "source_repo": "https://github.com/Perseus-Computing-LLC/perseus-vault",
-    "pinned_source_commit": "f48e528f89dfb8ce8c19c4a0714808a9d1fb728c"
+    "pinned_source_commit": "9c829207a4b44a8e679ba912b4c1c5608c8f1e36"
   },
   "generation": {
     "runx_cli_version": "runx-cli 0.8.2",
@@ -16,17 +16,17 @@
     "instructions": "https://github.com/Perseus-Computing-LLC/perseus-vault/blob/f48e528f89dfb8ce8c19c4a0714808a9d1fb728c/sourcey-docs/README.md",
     "command": "pnpm --dir sourcey-docs generate",
     "tool_count": 173,
-    "raw_snapshot_sha256": "bdafa2b26b47362ff9b6e340075f19d27286a7ef69459ffad6d7fbd3ad47b378"
+    "raw_snapshot_sha256": "fbd5680d8315d1c63adaa8ff6e967f0cb1b5ea0dd9bc8a6d69569999545ac9b1"
   },
-  "receipt_ref": "runx:receipt:sha256:67cb363fc8abd3366e8924a1d8a25f518fddad6855d2e44bb40bc5424809d75b",
+  "receipt_ref": "runx:receipt:sha256:64a796e0c1f9e13f862dae35be54704e006798ec8a86b29c19bd8abbfd8dea5a",
   "observations": [
     "The public reference, metadata.json, mcp.raw.json, mcp.render.json and llms.txt return HTTP 200 on perseus.observer.",
     "The upstream PR was authored by ja1claudio, approved by the project maintainer and merged into the authoritative repository.",
     "All upstream CI checks passed on the adoption PR, including Linux, macOS, Windows, Clippy, CodeQL, security audit and the Sourcey build.",
-    "metadata.json records Perseus Vault 2.23.1, Sourcey 3.6.5, mcp-parser 0.4.1, the lean feature profile, 173 tools and the canonical raw digest.",
+    "metadata.json records Perseus Vault 2.23.2, Sourcey 3.6.5, mcp-parser 0.4.1, the lean feature profile, 173 tools and the canonical raw digest.",
     "The canonical raw snapshot remains unmodified; the renderer derivative preserves the same ordered set of 173 unique tool names.",
     "The exact audit runtime version was runx-cli 0.8.2.",
-    "A governed runx audit checked the live page, snapshots, digest, metadata, five rendered tools and merged PR provenance."
+    "A governed runx audit signed by hosted identity ja1claudio-frantic-20260828 checked the live page, snapshots, digest, metadata, five rendered tools and merged PR provenance."
   ],
   "known_gaps": []
 }

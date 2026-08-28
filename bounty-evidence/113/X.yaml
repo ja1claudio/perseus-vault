@@ -21,6 +21,9 @@ runners:
       expected_source_commit:
         type: string
         required: true
+      expected_adoption_commit:
+        type: string
+        required: true
       expected_raw_sha256:
         type: string
         required: true

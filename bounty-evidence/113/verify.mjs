@@ -9,6 +9,7 @@ const required = (name) => {
 const publicUrl = required("public_url").replace(/\/$/, "");
 const upstreamPr = required("upstream_pr");
 const expectedCommit = required("expected_source_commit");
+const expectedAdoptionCommit = required("expected_adoption_commit");
 const expectedDigest = required("expected_raw_sha256");
 const expectedToolCount = Number(required("expected_tool_count"));
 const headers = { "User-Agent": "ja1claudio-perseus-sourcey-audit/1.0" };
@@ -19,9 +20,10 @@ const get = async (url) => {
   return response;
 };
 
-const [pageResponse, metadataResponse, rawResponse, renderedResponse, prResponse] =
+const [pageResponse, toolsResponse, metadataResponse, rawResponse, renderedResponse, prResponse] =
   await Promise.all([
     get(`${publicUrl}/`),
+    get(`${publicUrl}/mcp-tools.html`),
     get(`${publicUrl}/metadata.json`),
     get(`${publicUrl}/mcp.raw.json`),
     get(`${publicUrl}/mcp.render.json`),
@@ -29,6 +31,7 @@ const [pageResponse, metadataResponse, rawResponse, renderedResponse, prResponse
   ]);
 
 const page = await pageResponse.text();
+const toolsPage = await toolsResponse.text();
 const metadata = await metadataResponse.json();
 const rawBytes = Buffer.from(await rawResponse.arrayBuffer());
 const rendered = await renderedResponse.json();
@@ -41,13 +44,13 @@ const uniqueRawNames = [...new Set(rawNames)];
 const uniqueRenderedNames = [...new Set(renderedNames)];
 const spotChecks = uniqueRawNames.slice(0, 5).map((name) => ({
   name,
-  present_in_live_reference: page.includes(name),
+  present_in_live_reference: toolsPage.includes(name),
   present_in_rendered_snapshot: renderedNames.includes(name),
 }));
 
 const checks = {
   public_url_http_200: pageResponse.status === 200,
-  title_matches: page.includes("Perseus Vault - API Reference"),
+  title_matches: page.includes("Perseus Vault API entry") && toolsPage.includes("Perseus Vault"),
   source_commit_matches: metadata.source_commit === expectedCommit,
   sourcey_version: metadata.generators?.sourcey === "3.6.5",
   mcp_parser_version: metadata.generators?.mcp_parser === "0.4.1",
@@ -63,7 +66,7 @@ const checks = {
   upstream_pr_url_matches: pr.html_url === upstreamPr,
   upstream_pr_merged: pr.merged === true,
   upstream_pr_author_matches: pr.user?.login === "ja1claudio",
-  upstream_merge_commit_matches: pr.merge_commit_sha === expectedCommit,
+  upstream_merge_commit_matches: pr.merge_commit_sha === expectedAdoptionCommit,
 };
 
 if (!Object.values(checks).every(Boolean)) {
